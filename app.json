@@ -1,0 +1,28 @@
+{
+  "name": "porkbun-ical",
+  "env": {
+    "PORKBUN_API_KEY": {
+      "description": "Porkbun API key",
+      "required": true
+    },
+    "PORKBUN_API_SECRET": {
+      "description": "Porkbun API secret",
+      "required": true
+    }
+  },
+  "options": {
+    "allow-unauthenticated": true,
+    "memory": "512Mi",
+    "cpu": "1",
+    "port": 8080,
+    "http2": false,
+    "concurrency": 20,
+    "max-instances": 2
+  },
+  "build": {
+    "skip": false,
+    "buildpacks": {
+      "builder": "some/builderimage"
+    }
+  }
+}
