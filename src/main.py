@@ -58,10 +58,10 @@ def generate_icalendar(domains):
     refresh_interval = "P1W"
     cal = Calendar(
         version="2.0",
-        prodid=f"-//Porkbun//Domain Calendar v1.0//EN",
-        method="PUBLISH",
+        prodid="-//Porkbun//Domain Calendar v1.0//EN",
         name=name,
         description=description,
+        method="PUBLISH",
     )
     cal.add("last-modified", datetime.datetime.utcnow())
     cal.add("refresh-interval", refresh_interval)
@@ -71,14 +71,11 @@ def generate_icalendar(domains):
     cal.add("x-wr-timezone", "UTC")
     for domain in domains:
         name = domain["domain"]
-        event = Event(
-            uid=hashlib.md5(name.encode()).hexdigest(),
-            summary=f"🐷 {name}",
-            transp="TRANSPARENT",
-            rrule={"freq": "YEARLY"},
-            dtstart=parse_datetime(domain["expireDate"]),
-            dtend=parse_datetime(domain["expireDate"]),
-        )
+        event = Event(uid=hashlib.md5(name.encode()).hexdigest(), summary=f"🐷 {name}")
+        event.add("transp", "TRANSPARENT")
+        event.add("dtstart", parse_datetime(domain["expireDate"]))
+        event.add("dtend", parse_datetime(domain["expireDate"]))
+        event.add("rrule", {"freq": "YEARLY"})
         cal.add_component(event)
 
     return cal.to_ical()
