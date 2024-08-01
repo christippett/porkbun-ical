@@ -18,11 +18,5 @@
     "http2": false,
     "concurrency": 20,
     "max-instances": 2
-  },
-  "build": {
-    "skip": false,
-    "buildpacks": {
-      "builder": "some/builderimage"
-    }
   }
 }
