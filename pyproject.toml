@@ -3,6 +3,7 @@ name = "porkbun-ical"
 version = "0.1.0"
 description = "iCalendar for Porkbun domain renewal/expiries"
 authors = [{ name = "Chris Tippett", email = "git@christippett.dev" }]
+license = {file = "LICENSE"}
 dependencies = [
   "icalendar>=5.0.13",
   "flask>=3.0.3",
@@ -12,6 +13,9 @@ dependencies = [
 ]
 readme = "README.md"
 requires-python = ">= 3.8"
+
+[project.urls]
+Repository = "https://github.com/christippett/porkbun-ical"
 
 [tool.rye]
 managed = true
