@@ -19,7 +19,7 @@ virtual = true
 dev-dependencies = []
 
 [tool.rye.scripts]
-dev = { cmd = "flask --app ./src/main.py run", env-file = ".env" }
+dev = { cmd = "flask --app ./src/main.py run" }
 build = { cmd = "podman build -t porkbun-ical ." }
 
 
