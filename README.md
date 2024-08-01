@@ -33,7 +33,7 @@ The service uses Porkbun's API to fetch details of your domains. You can provide
 | Username   | Porkbun API key    |
 | Password   | Porkbun API secret |
 
-<img src="./assets/screenshot-2.png" alt="Screenshot of macOS Calendar.app" width="75%">
+<img src="./assets/screenshot-2.png" alt="Screenshot of macOS Calendar.app" width="55%">
 
 ```bash
 curl -u "$PORKBUN_API_KEY:$PORKBUN_API_SECRET" --basic https://your-service-url/calendar.ics
