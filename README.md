@@ -8,7 +8,7 @@
 
 Each domain's respective renewal/expiry date will be added to your calendar as an event. Here's what it looks like in the Calendar app on macOS:
 
-![Screenshot of macOS Calendar.app](./assets/screenshot-1.png)
+<img src="./assets/screenshot-1.png" alt="Screenshot of macOS Calendar.app" width="75%">
 
 ## Usage
 
@@ -21,17 +21,19 @@ The service uses Porkbun's API to fetch details of your domains. You can provide
 
 ### 1. Environment variables
 
+| Parameter            | Value              |
 | -------------------- | ------------------ |
 | PORKBUN_API_KEY      | Porkbun API key    |
 | PORKBUN_API_SECRET   | Porkbun API secret |
 
 ### 2. HTTP Basic Auth
 
+| Parameter  | Value              |
 | ---------- | ------------------ |
 | Username   | Porkbun API key    |
 | Password   | Porkbun API secret |
 
-![Screenshot of macOS Calendar.app](./assets/screenshot-2.png)
+<img src="./assets/screenshot-2.png" alt="Screenshot of macOS Calendar.app" width="75%">
 
 ```bash
 curl -u "$PORKBUN_API_KEY:$PORKBUN_API_SECRET" --basic https://your-service-url/calendar.ics
