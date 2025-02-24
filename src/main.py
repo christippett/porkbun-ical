@@ -54,7 +54,6 @@ def list_domains(key: str | None, secret: str | None):
     body = {
         "secretapikey": secret,
         "apikey": key,
-        "start": "1",
         "includeLabels": "yes",
     }
     resp = requests.post(f"{api_base}/domain/listAll", json=body)
