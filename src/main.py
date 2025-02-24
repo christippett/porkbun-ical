@@ -85,10 +85,12 @@ def generate_icalendar(domains):
     cal.add("x-wr-timezone", "UTC")
     for domain in domains:
         name = domain["domain"]
+        start_date = parse_datetime(domain["expireDate"])
+        end_date = start_date + datetime.timedelta(days=1)
         event = Event(uid=hashlib.md5(name.encode()).hexdigest(), summary=f"🐷 {name}")
         event.add("transp", "TRANSPARENT")
-        event.add("dtstart", parse_datetime(domain["expireDate"]))
-        event.add("dtend", parse_datetime(domain["expireDate"]))
+        event.add("dtstart", start_date.date())
+        event.add("dtend", end_date.date())
         event.add("rrule", {"freq": "YEARLY"})
         cal.add_component(event)
 
